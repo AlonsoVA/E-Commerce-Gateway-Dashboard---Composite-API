@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#1a1612">
+    <title>NorteShop · Composite API</title>
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,560;9..144,680&family=Outfit:wght@380;520;640&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+    <header class="topbar">
+        <div>
+            <p class="eyebrow">UTCH · Desarrollo Web Integral · Unidad 3</p>
+            <p class="brand">NorteShop</p>
+        </div>
+        <a class="text-link" href="/swagger-ui/index.html">Swagger</a>
+    </header>
+
+    <main>
+        <section class="intro">
+            <h1>Un detalle de producto. Una sola petición.</h1>
+            <p>El navegador pide el resumen a la API compuesta. El servidor consulta en paralelo el catálogo, el inventario y el tipo de cambio, y entrega un solo JSON.</p>
+        </section>
+
+        <div class="layout">
+            <section>
+                <div class="section-head">
+                    <h2>Catálogo</h2>
+                    <p>GET /microservices/products</p>
+                </div>
+                <div id="catalog" class="catalog" aria-live="polite"></div>
+            </section>
+
+            <section class="detail" id="detail" aria-live="polite"></section>
+        </div>
+
+        <section class="bench">
+            <div class="section-head">
+                <h2>Latencia en el cliente</h2>
+                <p>La misma pantalla, pedida de tres maneras</p>
+            </div>
+            <button id="measure" class="primary" type="button" disabled>Medir con el producto seleccionado</button>
+            <p id="measure-note" class="muted">Elige un producto para comparar las tres peticiones directas contra la API compuesta.</p>
+            <div id="bench-results" class="bench-grid"></div>
+        </section>
+    </main>
+
+    <footer>
+        <p>Evidencia · Implementación de Composite API y consumo de microservicios.</p>
+    </footer>
+    <script src="/js/app.js"></script>
+</body>
+</html>
