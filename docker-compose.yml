@@ -1,0 +1,18 @@
+# PostgreSQL opcional si no hay un servidor local.
+# Publica el puerto 5433 para no chocar con un Postgres que ya use 5432.
+# Arranque: docker compose up -d
+# Conexión: DB_URL=jdbc:postgresql://127.0.0.1:5433/ecommerce_gateway
+services:
+  postgres:
+    image: postgres:15
+    environment:
+      POSTGRES_USER: ecommerce
+      POSTGRES_PASSWORD: ecommerce
+      POSTGRES_DB: ecommerce_gateway
+    ports:
+      - "5433:5432"
+    volumes:
+      - ecommerce_pg:/var/lib/postgresql/data
+
+volumes:
+  ecommerce_pg:
