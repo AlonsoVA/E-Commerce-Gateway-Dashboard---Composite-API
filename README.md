@@ -126,7 +126,6 @@ src/main/java/mx/edu/utch/dgs/gateway
   composite/     orquestación con CompletableFuture
   bootstrap/     datos de ejemplo
 src/main/resources/static   tablero
-docs/REPORTE_TECNICO.md     reporte de la evidencia
 ```
 
 Catálogo e inventario no comparten llave foránea. El `product_id` es el dato con el que la API compuesta une las dos respuestas. En un despliegue real cada uno tendría su propia base; aquí viven en esquemas distintos de la misma instancia para poder correr la evidencia con un solo proceso.
